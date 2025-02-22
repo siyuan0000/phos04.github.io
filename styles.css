@@ -1,0 +1,94 @@
+:root {
+    --primary: #2a9d8f;
+    --secondary: #264653;
+    --accent: #e9c46a;
+    --text: #2b2d42;
+    --bg: #f8f9fa;
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] {
+    --primary: #4ecdc4;
+    --secondary: #292f36;
+    --accent: #ffe66d;
+    --text: #edf2f4;
+    --bg: #1a1a1a;
+    --card-bg: rgba(40, 40, 40, 0.9);
+}
+
+/* 添加动态渐变背景 */
+.gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    z-index: -1;
+}
+
+/* 毛玻璃导航栏 */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式卡片布局 */
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* 时间轴设计 */
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+/* 技能图标网格 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.skill-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(var(--primary), 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* 添加动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
